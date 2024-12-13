@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/keyDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下载: RSA公钥 -> TMK -> PinKey"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="签到"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keyDownload" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="签退"
+        app:layout_constraintLeft_toRightOf="@id/signOn"
+        app:layout_constraintTop_toBottomOf="@id/keyDownload" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="状态: 未签到"
+        android:textColor="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@id/signOff"
+        app:layout_constraintLeft_toRightOf="@id/signOff"
+        app:layout_constraintTop_toTopOf="@id/signOff" />
+
+    <TextView
+        android:id="@+id/tvReadMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="读卡方式:"
+        app:layout_constraintBottom_toBottomOf="@+id/rgReadMethod"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rgReadMethod" />
+
+    <RadioGroup
+        android:id="@+id/rgReadMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="@+id/tvReadMethod"
+        app:layout_constraintTop_toBottomOf="@+id/signOn">
+
+        <RadioButton
+            android:id="@+id/rbManual"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:text="手输"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rbSwipeCard"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="刷卡"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rbInsertCard"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="插卡"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rbWaveCard"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="挥卡"
+            android:textSize="14sp" />
+
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="消费"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgReadMethod" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/offline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="离线"
+        app:layout_constraintLeft_toRightOf="@id/sale"
+        app:layout_constraintTop_toBottomOf="@id/rgReadMethod" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ipp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="分期"
+        app:layout_constraintLeft_toRightOf="@id/offline"
+        app:layout_constraintTop_toBottomOf="@id/rgReadMethod" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saleVoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="撤销"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sale" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/refund"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="退款"
+        app:layout_constraintLeft_toRightOf="@id/saleVoid"
+        app:layout_constraintTop_toBottomOf="@id/sale" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tipAdjust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="小费调整"
+        app:layout_constraintLeft_toRightOf="@id/refund"
+        app:layout_constraintTop_toBottomOf="@id/sale" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/preAuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="预授权"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saleVoid" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/preAuthVoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="预授权撤销"
+        app:layout_constraintLeft_toRightOf="@id/preAuth"
+        app:layout_constraintTop_toBottomOf="@id/saleVoid" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/preAuthCaptureOffline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="预授权完成离线"
+        app:layout_constraintLeft_toRightOf="@id/preAuthVoid"
+        app:layout_constraintTop_toBottomOf="@id/saleVoid" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/noCardList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="无卡方式列表"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/preAuth" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/b2c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="B2C"
+        app:layout_constraintLeft_toRightOf="@id/noCardList"
+        app:layout_constraintTop_toBottomOf="@id/preAuth" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/c2b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="C2B"
+        app:layout_constraintLeft_toRightOf="@id/b2c"
+        app:layout_constraintTop_toBottomOf="@id/preAuth" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/noCardQuery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="查询"
+        app:layout_constraintLeft_toRightOf="@id/c2b"
+        app:layout_constraintTop_toBottomOf="@id/preAuth" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/settlementRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="结算请求"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/noCardList" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/batchUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="批上送"
+        app:layout_constraintLeft_toRightOf="@id/settlementRequest"
+        app:layout_constraintTop_toBottomOf="@id/noCardList" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/settlementComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="结算完成"
+        app:layout_constraintLeft_toRightOf="@id/batchUpload"
+        app:layout_constraintTop_toBottomOf="@id/noCardList" />
+
+    <com.xuexiang.xui.widget.textview.LoggerTextView
+        android:id="@+id/logger"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_log_bg"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settlementRequest" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

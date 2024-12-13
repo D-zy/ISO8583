@@ -1,0 +1,15 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ISO8583" parent="XUITheme.Phone">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/white</item>
+
+        <item name="xui_dialog_loading_min_size">40dp</item>
+        <item name="xui_dialog_loading_padding_size">10dp</item>
+        <item name="xui_loading_view_size">60dp</item>
+
+    </style>
+
+    <style name="Theme.ISO8583" parent="Base.Theme.ISO8583" />
+</resources>
